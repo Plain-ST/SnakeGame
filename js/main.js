@@ -10,7 +10,7 @@ textDrawC("PUSH \"SPACE\" KEY", "25px serif", "#ed0000", canv.height - 50);
 function gameStart() {
   //変数のリセット
   reset();
-  //ゲームの処理，2000msで呼び出す
+  //ゲームの処理，(1000/fps)msで呼び出す
   timer = setInterval(function () {
     //背景
     BGColor("#000000");
@@ -65,7 +65,7 @@ function gameStart() {
     if ((px < 0) || (px > canv.width / SIZE) || (py < 0) || (py > canv.height / SIZE)) {
       gameOver();
     }
-  }, 2000 / FPS);
+  }, 1000 / FPS);
 }
 //ゲームオーバー画面
 function gameOver() {
